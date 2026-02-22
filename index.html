@@ -15,10 +15,10 @@
 </head>
 <body class="max-w-[1600px] mx-auto "> 
     
-<header> 
+<header class="sm:sticky sm:top-0 bg-white pb-1"> 
     <h1 class="text-3xl text-blue-900 font-bold mt-[50px] p-2">Job Application Tracker</h1>
     
-    <div class="grid w-full md:grid-cols-3 gap-2.5 p-2"> <!-- count all-->
+    <div class="grid w-full sm:grid-cols-3 gap-2.5 p-2"> <!-- count all-->
         
         <!-- count Total -->
         <div class="card bg-base-300 rounded-box grid h-20 place-items-start text-xl p-2 bg-amber-100">Total
@@ -39,29 +39,30 @@
         </div>
         
     </div>
-<div class="divider mt-1"></div> <!-- line -->
+ <div class="divider mt-1"></div> <!-- line -->
 
- <div class="flex place-content-between" >  <!-- Total ttel -->
-
-    <h1 class= "text-xl text-blue-900 font-bold  p-2">Available Jobs</h1>
+    <div class="flex place-content-between" >  <!-- Total ttel -->
     
-    <p class= "text-xl p-2">
-     <span id="y-of-total" class="hidden">
-        <span id="int-job-count-of" class="font-bold">1</span> <span>of</span> 
-     </span>
-        <span id="h-all-job-count2" class="font-bold">0</span> jobs</p> <!-- count Total 2 -->
+        <h1 class= "text-xl text-blue-900 font-bold  p-2">Available Jobs</h1>
+        
+        <p class= "text-xl p-2">
+         <span id="y-of-total" class="hidden">
+            <span id="int-job-count-of" class="font-bold">1</span> <span>of</span> 
+         </span>
+            <span id="h-all-job-count2" class="font-bold">0</span> jobs</p> <!-- count Total 2 -->
+        
+    </div>
     
-</div>
+    <div class="tog-btn-div ml-1.5"> <!-- all ctrl btn -->
+        <button onclick="btnColor('tgl-all')"     id="tgl-all"     class="btn h-8 w-20 bg-blue-500 text-amber-50">All</button>
+        <button onclick="btnColor('tgl-itrvew')"  id="tgl-itrvew"  class="btn h-8 w-20">Interview</button>
+        <button onclick="btnColor('tgl-rjkt')"    id="tgl-rjkt"    class="btn h-8 w-20">Rejected</button>
+    </div>
 
 </header>
 
 <main class="p-2 mb-5 "> <!-- all job & btn-->
     
-    <div class="tog-btn-div"> <!-- all ctrl btn -->
-        <button onclick="btnColor('tgl-all')"     id="tgl-all"     class="btn h-8 w-20 bg-blue-500 text-amber-50">All</button>
-        <button onclick="btnColor('tgl-itrvew')"  id="tgl-itrvew"  class="btn h-8 w-20">Interview</button>
-        <button onclick="btnColor('tgl-rjkt')"    id="tgl-rjkt"    class="btn h-8 w-20">Rejected</button>
-    </div>
     
     <div id="all-job" class="all-job-pst mt-1"> <!-- all job or ttl job-->
         
@@ -204,21 +205,20 @@
 
 
 
-
         <!-- post 5-->
         <div id="post5" class="allPsts bg-amber-100 h-[300px] md:h-72  min-w-11/12 rounded-box mt-3  p-4 overflow-hidden">
 
             <div class="flex place-content-between"> <!-- h1 & btn div -->
                 <div>
-                    <h1 class= "text-[18px] text-blue-900 font-bold ">CloudFirst Inc</h1>
-                    <p class= " text-blue-950 ">Backend Developer</p>
+                    <h1 class= "text-[18px] text-blue-900 font-bold ">Innovation Labs</h1>
+                    <p class= " text-blue-950 ">UI/UX Engineer</p>
                 </div>
 
                 <button onclick="dltTrs('post5')" class=" h-10 w-[38px] btn rounded-full">
                 <i class="fa-solid fa-trash-can"></i></button> <!-- trash -->
             </div>
 
-            <p class= " text-blue-950 mt-4">Seattle, WA • Full-time • $140,000 - $190,000</p>
+            <p class= " text-blue-950 mt-4">Austin, TX • Full-time • $110,000 - $150,000</p>
             
             <div class="stts"> <!-- status btn    | -->
                 <button id="normal-5" class="btn normal5 bg-blue-200 border border-black rounded-box  my-2 text-center ">
@@ -228,7 +228,7 @@
                 <button id="red-5" class="btn text-red-500 border  my-2 border-red-500 hidden">REJECTED</button>
             </div>
             
-            <p class= " text-blue-950"> Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure. </p>
+            <p class= " text-blue-950"> Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required. </p>
 
             <div class="flex gap-2.5 mt-3">  <!-- 'int-btn',  -->
                 <button onclick="pstIBtnClk('int-btn5',5)"  id="int-btn5" class="btn text-emerald-600 border border-emerald-600">INTERVIEW</button>      <!-- btn -->
@@ -238,6 +238,114 @@
             </div>
             
         </div><!-- post 5 div end-->
+
+
+
+        <!-- post 6-->
+        <div id="post6" class="allPsts bg-amber-100 h-[300px] md:h-72  min-w-11/12 rounded-box mt-3  p-4 overflow-hidden">
+
+            <div class="flex place-content-between"> <!-- h1 & btn div -->
+                <div>
+                    <h1 class= "text-[18px] text-blue-900 font-bold ">MegaCorp Solutions</h1>
+                    <p class= " text-blue-950 ">JavaScript Developer</p>
+                </div>
+
+                <button onclick="dltTrs('post6')" class=" h-10 w-[38px] btn rounded-full">
+                <i class="fa-solid fa-trash-can"></i></button> <!-- trash -->
+            </div>
+
+            <p class= " text-blue-950 mt-4">New York, NY • Full-time • $130,000 - $170,00</p>
+            
+            <div class="stts"> <!-- status btn    | -->
+                <button id="normal-6" class="btn normal6 bg-blue-200 border border-black rounded-box  my-2 text-center ">
+                NOT APPLIED </button>
+                
+                <button id="green-6" class="btn green6 text-emerald-600 my-2 border border-emerald-600 hidden">INTERVIEW</button>
+                <button id="red-6" class="btn text-red-500 border  my-2 border-red-500 hidden">REJECTED</button>
+            </div>
+            
+            <p class= " text-blue-950"> Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities. </p>
+
+            <div class="flex gap-2.5 mt-3">  <!-- 'int-btn',  -->
+                <button onclick="pstIBtnClk('int-btn6',6)"  id="int-btn6" class="btn text-emerald-600 border border-emerald-600">INTERVIEW</button>      <!-- btn -->
+
+                <button onclick="pstRBtnClk('rjct-btn6',6)" id="rjct-btn6" class="btn text-red-500 border border-red-500">REJECTED</button> <!-- btn -->
+
+            </div>
+            
+        </div><!-- post 6 div end-->
+
+
+        
+        <!-- post 7-->
+        <div id="post7" class="allPsts bg-amber-100 h-[300px] md:h-72  min-w-11/12 rounded-box mt-3  p-4 overflow-hidden">
+
+            <div class="flex place-content-between"> <!-- h1 & btn div -->
+                <div>
+                    <h1 class= "text-[18px] text-blue-900 font-bold ">StartupXYZ</h1>
+                    <p class= " text-blue-950 ">Full Stack Engineer</p>
+                </div>
+
+                <button onclick="dltTrs('post7')" class=" h-10 w-[38px] btn rounded-full">
+                <i class="fa-solid fa-trash-can"></i></button> <!-- trash -->
+            </div>
+
+            <p class= " text-blue-950 mt-4">Remote • Full-time • $120,000 - $160,000</p>
+            
+            <div class="stts"> <!-- status btn    | -->
+                <button id="normal-7" class="btn normal7 bg-blue-200 border border-black rounded-box  my-2 text-center ">
+                NOT APPLIED </button>
+                
+                <button id="green-7" class="btn green7 text-emerald-600 my-2 border border-emerald-600 hidden">INTERVIEW</button>
+                <button id="red-7" class="btn text-red-500 border  my-2 border-red-500 hidden">REJECTED</button>
+            </div>
+            
+            <p class= " text-blue-950"> Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included. </p>
+
+            <div class="flex gap-2.5 mt-3">  <!-- 'int-btn',  -->
+                <button onclick="pstIBtnClk('int-btn7',7)"  id="int-btn7" class="btn text-emerald-600 border border-emerald-600">INTERVIEW</button>      <!-- btn -->
+
+                <button onclick="pstRBtnClk('rjct-btn7',7)" id="rjct-btn7" class="btn text-red-500 border border-red-500">REJECTED</button> <!-- btn -->
+
+            </div>
+            
+        </div><!-- post 7 div end-->
+
+
+
+        <!-- post 8-->
+        <div id="post8" class="allPsts bg-amber-100 h-[300px] md:h-72  min-w-11/12 rounded-box mt-3  p-4 overflow-hidden">
+
+            <div class="flex place-content-between"> <!-- h1 & btn div -->
+                <div>
+                    <h1 class= "text-[18px] text-blue-900 font-bold ">TechCorp Industries</h1>
+                    <p class= " text-blue-950 ">Senior Frontend Developer</p>
+                </div>
+
+                <button onclick="dltTrs('post8')" class=" h-10 w-[38px] btn rounded-full">
+                <i class="fa-solid fa-trash-can"></i></button> <!-- trash -->
+            </div>
+
+            <p class= " text-blue-950 mt-4">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+            
+            <div class="stts"> <!-- status btn    | -->
+                <button id="normal-8" class="btn normal8 bg-blue-200 border border-black rounded-box  my-2 text-center ">
+                NOT APPLIED </button>
+                
+                <button id="green-8" class="btn green8 text-emerald-600 my-2 border border-emerald-600 hidden">INTERVIEW</button>
+                <button id="red-8" class="btn text-red-500 border  my-2 border-red-500 hidden">REJECTED</button>
+            </div>
+            
+            <p class= " text-blue-950"> We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects. </p>
+
+            <div class="flex gap-2.5 mt-3">  <!-- 'int-btn',  -->
+                <button onclick="pstIBtnClk('int-btn8',8)"  id="int-btn8" class="btn text-emerald-600 border border-emerald-600">INTERVIEW</button>      <!-- btn -->
+
+                <button onclick="pstRBtnClk('rjct-btn8',8)" id="rjct-btn8" class="btn text-red-500 border border-red-500">REJECTED</button> <!-- btn -->
+
+            </div>
+            
+        </div><!-- post 8 div end-->
 
 
     </div><!-- all job or ttl job end-->
