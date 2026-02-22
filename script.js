@@ -153,11 +153,11 @@ function dltTrs(id){
     deleteP.remove();
 
     updateValue ();
-    noDataA();
     noDataI2();
     noDataR2(); 
     noDataI();
     noDataR(); 
+    noDataA();
 }
 
 //       no data
