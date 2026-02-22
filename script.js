@@ -16,7 +16,7 @@ allBtnTgl.addEventListener('click', function() {
     for(let post of allPosts){
         post.classList.remove('hidden');
     }
-    noDataA()
+    noDataA();
 })
     
 interBtnTgl.addEventListener('click', function() {
@@ -32,6 +32,8 @@ interBtnTgl.addEventListener('click', function() {
     }
 
     noDataI();
+    let interviewCount = document.getElementsByClassName('interview').length;  //   cls COUNT IN NUM access
+    noDataI2(interviewCount);
     
 })
     
@@ -46,6 +48,11 @@ rejectBtnTgl.addEventListener('click', function() {
     for(let rejPost of rejPosts){
         rejPost.classList.remove('hidden');
     }
+
+
+    noDataR();
+    let rejectedCount = document.getElementsByClassName('rejected').length;
+    noDataR2(rejectedCount);
     
 })
 
@@ -88,6 +95,10 @@ function pstIBtnClk(id,n){
     updateValue();
     // update Status
     updateSttsI(n,'i');
+
+    noDataI();
+    let interviewCount = document.getElementsByClassName('interview').length;  //   cls COUNT IN NUM access
+    noDataI2(interviewCount);
 }
 
 // for Rejected btn
@@ -98,6 +109,10 @@ function pstRBtnClk(id,n){
     updateValue();
     // update Status
     updateSttsI(n,'r');
+
+    noDataR();
+    let rejectedCount = document.getElementsByClassName('rejected').length;
+    noDataR2(rejectedCount);
     
 }
 
@@ -117,12 +132,16 @@ function updateValue (){
       
     let interviewCount = document.getElementsByClassName('interview').length;  //   cls COUNT IN NUM access
     let rejectedCount = document.getElementsByClassName('rejected').length;
-
+    
     headerInterview.innerText = interviewCount;
     headerRejected.innerText = rejectedCount;
-
+    
     headerAllJob1.innerText = allJob.children.length;            //   set all job count
     headerAllJob2.innerText = allJob.children.length; 
+    
+
+    noDataR2(rejectedCount);
+    noDataI2(interviewCount);
 
 }
 
@@ -132,8 +151,11 @@ function dltTrs(id){
     alert(`Do you want to remove 
         " ${deleteP.querySelector('h1').innerText } " ? `)
     deleteP.remove();
+
     updateValue ();
     noDataA();
+    noDataI2();
+    noDataR2(); 
 }
 
 //       no data
@@ -152,9 +174,37 @@ function noDataA(){
 
 // noData for interview 
 let intCountInnerTxt = document.getElementById('h-interview-job-count1').innerText;
+let rejCountInnerTxt = document.getElementById('h-rejected-job-count1').innerText;
 
 function noDataI(){
     if(intCountInnerTxt == 0 && allJob.children.length !== 0){
         noData.classList.remove('hidden')
+    }
+}
+
+function noDataR(){
+    if(rejCountInnerTxt == 0 && allJob.children.length !== 0){
+        noData.classList.remove('hidden')
+    }
+}
+
+
+// noData for rejected
+function noDataR2(N){
+    if(N == 0 && allJob.children.length !== 0){
+        noData.classList.remove('hidden')
+    }
+
+    else if(N>0){
+        noData.classList.add('hidden')
+    }
+}
+function noDataI2(N){
+    if(N == 0 && allJob.children.length !== 0){
+        noData.classList.remove('hidden')
+    }
+
+    else if(N>0){
+        noData.classList.add('hidden')
     }
 }
