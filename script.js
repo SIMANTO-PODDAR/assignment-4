@@ -17,6 +17,7 @@ allBtnTgl.addEventListener('click', function() {
         post.classList.remove('hidden');
     }
     noDataA();
+    yFoTtal ('c',0);
 })
     
 interBtnTgl.addEventListener('click', function() {
@@ -34,6 +35,8 @@ interBtnTgl.addEventListener('click', function() {
     noDataI();
     let interviewCount = document.getElementsByClassName('interview').length;  //   cls COUNT IN NUM access
     noDataI2(interviewCount);
+
+    yFoTtal('a',interviewCount);
     
 })
     
@@ -53,6 +56,8 @@ rejectBtnTgl.addEventListener('click', function() {
     noDataR();
     let rejectedCount = document.getElementsByClassName('rejected').length;
     noDataR2(rejectedCount);
+
+    yFoTtal('b',rejectedCount);
     
 })
 
@@ -158,6 +163,8 @@ function dltTrs(id){
     noDataI();
     noDataR(); 
     noDataA();
+    
+    updateYOf();
 }
 
 //       no data
@@ -209,4 +216,31 @@ function noDataI2(N){
     else if(N>0){
         noData.classList.add('hidden')
     }
+}
+
+
+// y-of-total count
+let yText = document.getElementById('y-of-total');
+let intText = document.getElementById('int-job-count-of');
+
+function yFoTtal (L,N){
+    yText.classList.add('hidden');
+
+    if(L == 'a'){
+        yText.classList.remove('hidden');
+        intText.innerText = N;
+    }
+    else if(L == 'b'){
+        yText.classList.remove('hidden');
+        intText.innerText = N;
+    }
+
+}
+
+function updateYOf(){
+    let intPosts = document.getElementsByClassName('interview');
+    let rejPosts = document.getElementsByClassName('rejected');
+
+    yFoTtal ('a',intPosts.length);
+    yFoTtal ('b',rejPosts.length);
 }
