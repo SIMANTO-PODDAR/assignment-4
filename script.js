@@ -16,6 +16,7 @@ allBtnTgl.addEventListener('click', function() {
     for(let post of allPosts){
         post.classList.remove('hidden');
     }
+    noDataA()
 })
     
 interBtnTgl.addEventListener('click', function() {
@@ -29,6 +30,8 @@ interBtnTgl.addEventListener('click', function() {
     for(let intPost of intPosts){
          intPost.classList.remove('hidden');
     }
+
+    noDataI();
     
 })
     
@@ -141,4 +144,17 @@ function noDataA(){
         noData.classList.remove('hidden')
     }
 
+    else if (allJob.children.length !== 0){
+        noData.classList.add('hidden')
+    }
+
+}
+
+// noData for interview 
+let intCountInnerTxt = document.getElementById('h-interview-job-count1').innerText;
+
+function noDataI(){
+    if(intCountInnerTxt == 0 && allJob.children.length !== 0){
+        noData.classList.remove('hidden')
+    }
 }
