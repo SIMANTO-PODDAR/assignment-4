@@ -130,4 +130,15 @@ function dltTrs(id){
         " ${deleteP.querySelector('h1').innerText } " ? `)
     deleteP.remove();
     updateValue ();
+    noDataA();
+}
+
+//       no data
+let noData = document.getElementById('no-data');
+
+function noDataA(){
+    if(allJob.children.length == 0){
+        noData.classList.remove('hidden')
+    }
+
 }
