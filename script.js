@@ -104,6 +104,7 @@ function pstIBtnClk(id,n){
     noDataI2(interviewCount);
 
     hrdReLod();
+    updateYOf();
 }
 
 // for Rejected btn
@@ -120,6 +121,7 @@ function pstRBtnClk(id,n){
     noDataR2(rejectedCount);
     
     hrdReLod();
+    updateYOf();
 }
 
 
@@ -166,6 +168,7 @@ function dltTrs(id){
     noDataA();
     
     updateYOf();
+    noDataTgl();
 }
 
 //       no data
@@ -242,8 +245,19 @@ function updateYOf(){
     let intPosts = document.getElementsByClassName('interview');
     let rejPosts = document.getElementsByClassName('rejected');
 
-    yFoTtal ('a',intPosts.length);
-    yFoTtal ('b',rejPosts.length);
+    let tglInt = document.getElementById('tgl-itrvew');
+    let tglRej = document.getElementById('tgl-rjkt');
+
+    let tglInAct = tglInt.classList.contains('bg-blue-500');
+    let tglReAct = tglRej.classList.contains('bg-blue-500');
+
+    if(tglInAct){
+        yFoTtal ('a',intPosts.length);
+    }
+
+    if(tglReAct){
+        yFoTtal ('b',rejPosts.length);
+    }
 }
 
 
