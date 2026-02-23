@@ -287,4 +287,25 @@ for (let pst of alPsts) {
     }
 }
 
+   noDataTgl();
+
+}
+
+function noDataTgl() {
+    let noData = document.getElementById('no-data');
+    let alPsts = document.getElementsByClassName('allPsts');
+
+    let dataCount = 0;
+
+    for (let pst of alPsts) {
+        if (!pst.classList.contains('hidden')) {
+            dataCount++;
+        }
+    }
+
+    if (dataCount === 0) {
+        noData.classList.remove('hidden');
+    } else {
+        noData.classList.add('hidden');
+    }
 }
