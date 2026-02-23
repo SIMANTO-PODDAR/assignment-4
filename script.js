@@ -74,23 +74,21 @@ function btnColor(id){
 }
 
 // update Status 
-    function updateSttsI(n,bT){     //bT btn typ
-        let normalBtn = document.getElementById('normal-'+n);
-        let greenBtn = document.getElementById('green-'+n);
-        let redBtn = document.getElementById('red-'+n);
-
-        normalBtn.classList.add('hidden');
-        greenBtn.classList.add('hidden');
-        redBtn.classList.add('hidden');
-
-        if(bT == 'i'){
-            greenBtn.classList.remove('hidden');
-        }
-        else if(bT == 'r'){
-            redBtn.classList.remove('hidden');
-        }
-
+function updateSttsI(n,bT){     //bT btn typ
+    let normalBtn = document.getElementById('normal-'+n);
+    let greenBtn = document.getElementById('green-'+n);
+    let redBtn = document.getElementById('red-'+n);
+    normalBtn.classList.add('hidden');
+    greenBtn.classList.add('hidden');
+    redBtn.classList.add('hidden');
+    if(bT == 'i'){
+        greenBtn.classList.remove('hidden');
     }
+    else if(bT == 'r'){
+        redBtn.classList.remove('hidden');
+    }
+
+}
 
 // for Intervies btn
 function pstIBtnClk(id,n){
@@ -264,7 +262,7 @@ function hrdReLod() {
     let alPsts = document.getElementsByClassName('allPsts');
 
 
-for (let pst of alPsts) {
+ for (let pst of alPsts) {
     
     if (tglAlAct) {
         pst.classList.remove('hidden');

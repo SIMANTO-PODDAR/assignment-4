@@ -5,7 +5,7 @@
 
     difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll ,
 
-   *  We use getElementById to select only 1 unique element in a document 0r HTML.
+   *  We use getElementById to select only 1 unique element in a document or HTML.
       It give 1 element.
      
    *  We use getElementsByClassName to select element that have the same class name in  document or HTML.
