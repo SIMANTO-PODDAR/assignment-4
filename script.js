@@ -104,6 +104,8 @@ function pstIBtnClk(id,n){
     noDataI();
     let interviewCount = document.getElementsByClassName('interview').length;  //   cls COUNT IN NUM access
     noDataI2(interviewCount);
+
+    hrdReLod();
 }
 
 // for Rejected btn
@@ -119,6 +121,7 @@ function pstRBtnClk(id,n){
     let rejectedCount = document.getElementsByClassName('rejected').length;
     noDataR2(rejectedCount);
     
+    hrdReLod();
 }
 
 
@@ -243,4 +246,45 @@ function updateYOf(){
 
     yFoTtal ('a',intPosts.length);
     yFoTtal ('b',rejPosts.length);
+}
+
+
+//                    hard reload 
+function hrdReLod() {
+
+    let tglAll = document.getElementById('tgl-all');
+    let tglInt = document.getElementById('tgl-itrvew');
+    let tglRej = document.getElementById('tgl-rjkt');
+
+    let tglAlAct = tglAll.classList.contains('bg-blue-500');
+    let tglInAct = tglInt.classList.contains('bg-blue-500');
+    let tglReAct = tglRej.classList.contains('bg-blue-500');
+
+
+    let alPsts = document.getElementsByClassName('allPsts');
+
+
+for (let pst of alPsts) {
+    
+    if (tglAlAct) {
+        pst.classList.remove('hidden');
+    }
+
+    if (tglInAct) {
+        if (pst.classList.contains('interview')) {
+            pst.classList.remove('hidden');
+        } else {
+            pst.classList.add('hidden');
+        }
+    } 
+
+    if (tglReAct) {
+        if (pst.classList.contains('rejected')) {
+            pst.classList.remove('hidden');
+        } else {
+            pst.classList.add('hidden');
+        }
+    }
+}
+
 }
