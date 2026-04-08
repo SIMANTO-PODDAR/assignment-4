@@ -1,8 +1,8 @@
 # 📌 Job Application Tracker
 
-## 🔗 Live Demo
+## 🔗 Live Demo (Netlify)
 
-👉 [View Live Project -> Job Application Tracker](https://simanto-poddar.github.io/Job-Application-Tracker/)
+👉 [View Live Project -> Job Application Tracker](https://job-application-tracker-by-simanto.netlify.app/)
 
 ---
 
